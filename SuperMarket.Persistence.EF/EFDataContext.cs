@@ -29,16 +29,6 @@ namespace SuperMarket.Persistence.EF
         {
             modelBuilder.ApplyConfigurationsFromAssembly(typeof(EFDataContext).Assembly);
         }
-        public override ChangeTracker ChangeTracker
-        {
-            get
-            {
-                var tracker = base.ChangeTracker;
-                tracker.LazyLoadingEnabled = false;
-                tracker.AutoDetectChangesEnabled = true;
-                tracker.QueryTrackingBehavior = QueryTrackingBehavior.TrackAll;
-                return tracker;
-            }
-        }
+       
     }
 }
