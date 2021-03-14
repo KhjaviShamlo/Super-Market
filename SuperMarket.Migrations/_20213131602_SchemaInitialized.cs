@@ -9,6 +9,7 @@ namespace SuperMarket.Migrations
     {
         public override void Down()
         {
+            //Delete.Table();
         }
 
         public override void Up()

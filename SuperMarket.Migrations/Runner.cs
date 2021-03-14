@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Microsoft.Extensions.DependencyInjection;
+using System;
+using FluentMigrator.Runner;
 using System.Collections.Generic;
 using System.Text;
 
@@ -8,30 +10,32 @@ namespace SuperMarket.Migrations
     {
         static void Main(string[] args)
         {
-            var options = GetCommandLineArgs(args);
+            var serviceProvider = CreateServices();
 
-            var connectionString = options.GetValue("connection-string", defaultValue: "Data Source=data.db");
 
-            CreateDatabase(connectionString);
+            using (var scope = serviceProvider.CreateScope())
+            {
+                UpdateDatabase(scope.ServiceProvider);
+            }
+        }
 
-            var runner = CreateRunner(connectionString);
+        private static IServiceProvider CreateServices()
+        {
+            return new ServiceCollection()
 
+                .AddFluentMigratorCore()
+                .ConfigureRunner(rb => rb
+                    .AddSqlServer()
+                    .WithGlobalConnectionString("Server=.;Database=Khajavi_DB;Trusted_Connection=True;")// should create the database first manually
+                    .ScanIn(typeof(Runner).Assembly).For.Migrations())// https://docs.microsoft.com/en-us/dotnet/api/system.reflection.assembly?view=net-5.0
+                .AddLogging(lb => lb.AddFluentMigratorConsole())
+                .BuildServiceProvider(false);
+        }
+
+        private static void UpdateDatabase(IServiceProvider serviceProvider)
+        {
+            var runner = serviceProvider.GetRequiredService<IMigrationRunner>();
             runner.MigrateUp();
-        }
-
-        private static object CreateRunner(object connectionString)
-        {
-            throw new NotImplementedException();
-        }
-
-        private static void CreateDatabase(object connectionString)
-        {
-            throw new NotImplementedException();
-        }
-
-        private static object GetCommandLineArgs(string[] args)
-        {
-            throw new NotImplementedException();
         }
     }
 }
