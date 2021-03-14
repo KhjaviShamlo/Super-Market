@@ -1,0 +1,59 @@
+[33mcommit a5967dc65ae918a513d8e877be6866c785a59b43[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m
+Author: ali Hoseyn Khajavi <asia.rayaneh.65@gmail.com>
+Date:   Sun Mar 14 14:15:59 2021 +0330
+
+    Create Migration
+
+[33mcommit a5e230ece1e221690c82b49277d1b5f308debd7e[m
+Author: ali Hoseyn Khajavi <asia.rayaneh.65@gmail.com>
+Date:   Sat Mar 13 16:51:06 2021 +0330
+
+    End
+
+[33mcommit 96827a55672684fcbe6d998b48f612a12dd23242[m
+Author: ali Hoseyn Khajavi <asia.rayaneh.65@gmail.com>
+Date:   Sat Mar 13 16:36:32 2021 +0330
+
+    create EFDataContext
+
+[33mcommit 29fd38c55f58bfee5669647812f30adff6f6029d[m
+Author: ali Hoseyn Khajavi <asia.rayaneh.65@gmail.com>
+Date:   Sat Mar 13 15:28:59 2021 +0330
+
+    create Domain folder and Salesfactor Map
+
+[33mcommit a1188627477b6dde65f97a8cb2a63c32c5f52660[m
+Author: ali Hoseyn Khajavi <asia.rayaneh.65@gmail.com>
+Date:   Sat Mar 13 14:22:30 2021 +0330
+
+    GoodEntryMap
+
+[33mcommit c68b7137a6b19766ea4ee752a838b3f7f5fd6e02[m
+Author: ali Hoseyn Khajavi <asia.rayaneh.65@gmail.com>
+Date:   Sat Mar 13 14:13:53 2021 +0330
+
+    Create GoodCtegoryMap And GoodsMap
+
+[33mcommit c14afd420b1029da164194e5163a1fc364fbaa2b[m
+Author: ali Hoseyn Khajavi <asia.rayaneh.65@gmail.com>
+Date:   Sat Mar 13 13:24:38 2021 +0330
+
+    Create Persistence.EF
+
+[33mcommit b5fbb18ab8a848265cf1277692e7451ac4df2608[m
+Author: ali Hoseyn Khajavi <asia.rayaneh.65@gmail.com>
+Date:   Sat Mar 13 13:14:44 2021 +0330
+
+    Create Aplication
+
+[33mcommit 885f950909b0ce48ff4b920661f526aab07e76f9[m
+Author: ali Hoseyn Khajavi <asia.rayaneh.65@gmail.com>
+Date:   Sat Mar 13 13:08:30 2021 +0330
+
+    Create infrastructture
+
+[33mcommit 8c7de7a61ac91cc085a0cc11c9484383a96fec9f[m
+Author: ali Hoseyn Khajavi <asia.rayaneh.65@gmail.com>
+Date:   Sat Mar 13 13:02:01 2021 +0330
+
+    Create Entites
