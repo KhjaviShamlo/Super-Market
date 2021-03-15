@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using SuperMarket.Entites;
 
-namespace SuperMarket.Persistence.EF.SalesFactorMap
+namespace SuperMarket.Persistence.EF.SalesFactorMa
 {
     public class SalesFactorEntityMap : IEntityTypeConfiguration<SalesFactor>
     {

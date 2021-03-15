@@ -8,6 +8,7 @@ namespace SuperMarket.Migrations
 {
    class Runner
     {
+
         static void Main(string[] args)
         {
             var serviceProvider = CreateServices();
@@ -26,7 +27,7 @@ namespace SuperMarket.Migrations
                 .AddFluentMigratorCore()
                 .ConfigureRunner(rb => rb
                     .AddSqlServer()
-                    .WithGlobalConnectionString("Server=.;Database=Khajavi_DB;Trusted_Connection=True;")// should create the database first manually
+                    .WithGlobalConnectionString("Server=.;Database=SuperMarket;Trusted_Connection=True;")// should create the database first manually
                     .ScanIn(typeof(Runner).Assembly).For.Migrations())// https://docs.microsoft.com/en-us/dotnet/api/system.reflection.assembly?view=net-5.0
                 .AddLogging(lb => lb.AddFluentMigratorConsole())
                 .BuildServiceProvider(false);
@@ -35,6 +36,7 @@ namespace SuperMarket.Migrations
         private static void UpdateDatabase(IServiceProvider serviceProvider)
         {
             var runner = serviceProvider.GetRequiredService<IMigrationRunner>();
+            
             runner.MigrateUp();
         }
     }
