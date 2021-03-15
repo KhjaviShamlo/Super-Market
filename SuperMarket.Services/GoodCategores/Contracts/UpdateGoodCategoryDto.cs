@@ -4,9 +4,8 @@ using System.Text;
 
 namespace SuperMarket.Services.GoodCategores.Contracts
 {
-    public class GettAllGoodCategoryDto
+   public class UpdateGoodCategoryDto
     {
-        public int Id { get; set; }
         public string Title { get; set; }
     }
 }

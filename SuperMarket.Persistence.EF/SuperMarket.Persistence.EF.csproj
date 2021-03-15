@@ -12,6 +12,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\SuperMarket.Entites\SuperMarket.Entites.csproj" />
+    <ProjectReference Include="..\SuperMarket.Services\SuperMarket.Services.csproj" />
   </ItemGroup>
 
 </Project>
