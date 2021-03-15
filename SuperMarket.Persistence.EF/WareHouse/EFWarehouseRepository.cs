@@ -45,7 +45,11 @@ namespace SuperMarket.Persistence.EF.SalesFactor
 
         public Task<GettWarehouseByIdDto> GettById(int id)
         {
-            throw new NotImplementedException();
+            return await _setWerhouse.Select(c => new GettWarehouseByIdDto()
+            {
+                Id = c.Id,
+                Name = c.Name
+            }).ToListAsync();
         }
 
         public Task<bool> IsExistById(int id)

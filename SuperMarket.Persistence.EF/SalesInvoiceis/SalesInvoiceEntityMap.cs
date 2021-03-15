@@ -1,14 +1,12 @@
 ﻿
-using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using SuperMarket.Entites;
-
-namespace SuperMarket.Persistence.EF.SalesFactorMa
+namespace SuperMarket.Persistence.EF.SalesInvoiceis
 {
-    public class SalesFactorEntityMap : IEntityTypeConfiguration<SalesFactor>
+    public class SalesInvoiceEntityMap : IEntityTypeConfiguration<SalesInvoice>
     {
-        public void Configure(EntityTypeBuilder<SalesFactor> _)
+        public void Configure(EntityTypeBuilder<SalesInvoice> _)
         {
             _.ToTable("SalesFactors");
             _.HasKey(_ => _.Id);

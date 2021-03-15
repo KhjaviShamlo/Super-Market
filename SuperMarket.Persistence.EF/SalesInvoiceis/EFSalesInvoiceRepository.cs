@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace SuperMarket.Services.SalesFactor.Contracts
+namespace SuperMarket.Persistence.EF.
 {
-    class SalesFactorServices
+  public class EFSalesInvoiceRepository
     {
     }
 }
