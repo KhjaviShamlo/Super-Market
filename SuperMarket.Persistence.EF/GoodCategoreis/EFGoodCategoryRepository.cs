@@ -12,31 +12,31 @@ namespace SuperMarket.Persistence.EF.GoodCategoreis
     public class EFGoodCategoryRepository : GoodCategoryRepository
     {
         private readonly EFDataContext _context;
-        private readonly DbSet<GoodCategory> _set;
+        private readonly DbSet<GoodCategory> _setGoodCategory;
 
         public EFGoodCategoryRepository(EFDataContext context)
         {
             _context = context;
-            _set = _context.GoodCategores;
+            _setGoodCategory = _context.GoodCategores;
         }
         public void Add(GoodCategory goodCategores)
         {
-            _set.Add(goodCategores);
+            _setGoodCategory.Add(goodCategores);
         }
 
         public void Delete(GoodCategory goodCategory)
         {
-            _set.Remove(goodCategory);
+            _setGoodCategory.Remove(goodCategory);
         }
 
         public async Task<GoodCategory> FindById(int id)
         {
-           return await _set.FindAsync(id);
+           return await _setGoodCategory.FindAsync(id);
         }
 
         public async Task<IList<GettAllGoodCategoryDto>> GettAll()
         {
-            return await _set.Select(c => new GettAllGoodCategoryDto()
+            return await _setGoodCategory.Select(c => new GettAllGoodCategoryDto()
             {
                 Id = c.Id,
                 Title = c.Title
@@ -45,7 +45,7 @@ namespace SuperMarket.Persistence.EF.GoodCategoreis
 
         public async Task<GettGoodCategoryByIdDto> GettById(int id)
         {
-            return await _set.Select(c => new GettGoodCategoryByIdDto()
+            return await _setGoodCategory.Select(c => new GettGoodCategoryByIdDto()
             {
                 Id = c.Id,
                 Title = c.Title
@@ -54,12 +54,12 @@ namespace SuperMarket.Persistence.EF.GoodCategoreis
 
         public async Task<bool> IsExistById(int id)
         {
-            return await _set.AnyAsync(c => c.Id == id);
+            return await _setGoodCategory.AnyAsync(c => c.Id == id);
         }
 
         public async Task<bool> IsExistTitle(string title)
         {
-            return await _set.AnyAsync(c => c.Title == title);
+            return await _setGoodCategory.AnyAsync(c => c.Title == title);
         }
     }
 }

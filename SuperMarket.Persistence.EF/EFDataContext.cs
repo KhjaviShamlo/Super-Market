@@ -12,7 +12,7 @@ namespace SuperMarket.Persistence.EF
         public DbSet<Good> Goods { get; set; }
         public DbSet<GoodCategory> GoodCategores { get; set; }
         public DbSet<GoodEntry> GoodEntries { get; set; }
-        public DbSet<SalesInvoice> SalesFactors { get; set; }
+        public DbSet<SalesInvoice> SalesInvoiceis { get; set; }
         public DbSet<Warehouse> Warehouse { get; internal set; }
 
         public EFDataContext(string connectionString) :this(new DbContextOptionsBuilder<EFDataContext>().UseSqlServer(connectionString).Options)

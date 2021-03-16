@@ -12,7 +12,7 @@ namespace SuperMarket.Migrations
             Delete.Table("Goods");
             Delete.Table("GoodCategores");
             Delete.Table("GoodEntries");
-            Delete.Table("SalesFactors");
+            Delete.Table("SalesInvoiceis");
         }
 
         public override void Up()
@@ -39,7 +39,7 @@ namespace SuperMarket.Migrations
                 .WithColumn("GoodCount").AsInt32()
                 .WithColumn("EntryDate").AsDateTime();
 
-            Create.Table("SalesFactors")
+            Create.Table("SalesInvoiceis")
                 .WithColumn("Id").AsInt32().NotNullable().PrimaryKey().Identity()
                 .WithColumn("GoodCode").AsString(10).NotNullable()
                 .WithColumn("GoodCount").AsInt32()
